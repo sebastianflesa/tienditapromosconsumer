@@ -1,0 +1,15 @@
+com\tiendita\tienditapromosconsumer\dto\StockUpdateDTO.class
+com\tiendita\tienditapromosconsumer\service\impl\PromocionServiceImpl.class
+com\tiendita\tienditapromosconsumer\service\MensajeService.class
+com\tiendita\tienditapromosconsumer\service\PromocionService.class
+com\tiendita\tienditapromosconsumer\service\impl\JsonFileServiceImpl.class
+com\tiendita\tienditapromosconsumer\service\impl\MensajeServiceImpl.class
+com\tiendita\tienditapromosconsumer\service\JsonFileService.class
+com\tiendita\tienditapromosconsumer\TienditapromosconsumerApplication.class
+com\tiendita\tienditapromosconsumer\dto\PromoDTO.class
+com\tiendita\tienditapromosconsumer\repository\PromocionRepository.class
+com\tiendita\tienditapromosconsumer\controller\MensajeController.class
+com\tiendita\tienditapromosconsumer\models\Promocion.class
+com\tiendita\tienditapromosconsumer\config\RabbitMQConfig.class
+com\tiendita\tienditapromosconsumer\repository\ProductoRepository.class
+com\tiendita\tienditapromosconsumer\models\Producto.class

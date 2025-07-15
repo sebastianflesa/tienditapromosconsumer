@@ -1,0 +1,15 @@
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\config\RabbitMQConfig.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\controller\MensajeController.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\dto\PromoDTO.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\dto\StockUpdateDTO.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\models\Producto.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\models\Promocion.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\repository\ProductoRepository.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\repository\PromocionRepository.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\service\impl\JsonFileServiceImpl.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\service\impl\MensajeServiceImpl.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\service\impl\PromocionServiceImpl.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\service\JsonFileService.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\service\MensajeService.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\service\PromocionService.java
+C:\Users\sebastian.orrego\Desktop\ING.SOFT\cloud_native\etf\tienditapromosconsumer\src\main\java\com\tiendita\tienditapromosconsumer\TienditapromosconsumerApplication.java

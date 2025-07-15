@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.rabbitmq.client.Channel;
 
 import com.tiendita.tienditapromosconsumer.config.RabbitMQConfig;
-import com.tiendita.tienditapromosconsumer.dto.StockUpdateDTO;
 import com.tiendita.tienditapromosconsumer.dto.PromoDTO;
 import com.tiendita.tienditapromosconsumer.service.MensajeService;
 import com.tiendita.tienditapromosconsumer.service.JsonFileService;
+import com.tiendita.tienditapromosconsumer.service.PromocionService;
+import com.tiendita.tienditapromosconsumer.models.Promocion;
 
 @Service
 public class MensajeServiceImpl implements MensajeService {
@@ -22,7 +22,9 @@ public class MensajeServiceImpl implements MensajeService {
     
     @Autowired
     private JsonFileService jsonFileService;
-
+    
+    @Autowired
+    private PromocionService promocionService;
 
     public MensajeServiceImpl() {
         this.objectMapper = new ObjectMapper();
@@ -42,20 +44,43 @@ public class MensajeServiceImpl implements MensajeService {
             String mensajeJson = new String(mensaje.getBody());
             System.out.println("Mensaje recibido en cola promos: " + mensajeJson);
             
+            // Independientemente del contenido del mensaje, crear promoción para producto con mayor stock
+            try {
+                Promocion promocionGenerada = promocionService.crearPromocionProductoMayorStock();
+                //System.out.println("Promoción generada automáticamente: " + promocionGenerada);
+                
+                // También guardar en archivo JSON si se requiere mantener funcionalidad existente
+                //PromoDTO promoDTO = new PromoDTO();
+                //promoDTO.setProductoId(promocionGenerada.getProductoId());
+                //promoDTO.setDescuento((double) promocionGenerada.getDescuento().intValue());
+                //promoDTO.setDescripcion(promocionGenerada.getDescripcion());
+                
+                //jsonFileService.savePromoToJsonFile(promoDTO);
+                //System.out.println("Promoción también guardada en archivo JSON");
+                
+            } catch (Exception e) {
+                System.err.println("Error al generar promoción automática: " + e.getMessage());
+                e.printStackTrace();
+            }
+            
+            // Intentar procesar el mensaje original como antes (por compatibilidad)
             try {
                 String jsonLimpio = mensajeJson.trim();
                 
-                if (jsonLimpio.startsWith("\"") && jsonLimpio.endsWith("\"")) {
-                    jsonLimpio = objectMapper.readValue(jsonLimpio, String.class);
-                }
+                // Si el mensaje viene con dobles comillas, las removemos
+                //if (jsonLimpio.startsWith("\"") && jsonLimpio.endsWith("\"")) {
+                //    jsonLimpio = objectMapper.readValue(jsonLimpio, String.class);
+                //}
                 
-                PromoDTO promo = objectMapper.readValue(jsonLimpio, PromoDTO.class);
-                jsonFileService.savePromoToJsonFile(promo);
+                //PromoDTO promo = objectMapper.readValue(jsonLimpio, PromoDTO.class);
                 
-                System.out.println("Promo procesada y guardada: " + promo);
+                // Guardar en base de datos
+                //Promocion promocionGuardada = promocionService.guardarPromocion(promo);
+                //System.out.println("Promoción del mensaje original guardada en base de datos: " + promocionGuardada);
                 
             } catch (Exception e) {
-                System.err.println("No se pudo parsear como PromoDTO, guardando como mensaje genérico: " + e.getMessage());
+                System.out.println("No se pudo parsear como PromoDTO (procesamiento normal): " + e.getMessage());
+                // No es un error crítico ya que la promoción automática ya se generó
             }
             
         } catch (Exception e) {

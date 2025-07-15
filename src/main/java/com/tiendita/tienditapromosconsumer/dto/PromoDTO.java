@@ -13,14 +13,21 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class PromoDTO {
+    @JsonProperty("id")
+    private Long id;
+
     @JsonProperty("productoId")
-    private Integer productoId;
-    
-    @JsonProperty("porcentajeDescuento")
-    private Integer porcentajeDescuento;
-    
+    private Long productoId;
+
     @JsonProperty("descripcion")
     private String descripcion;
-   
 
+    @JsonProperty("descuento")
+    private Double descuento;
+
+    @JsonProperty("fechaVencimiento")
+    private java.time.LocalDate fechaVencimiento;
+
+    @JsonProperty("valido")
+    private Integer valido = 1;
 }
